@@ -1,0 +1,25 @@
+FROM 172.16.155.136:5000/ebotubuntu:v0.2
+#FROM docker-reg.emotibot.com.cn:55688/ebotubuntu:v0.2
+# Environment Setting
+# working directory
+RUN mkdir -p /usr/src
+ENV DIRPATH /usr/src
+ENV APPPATH /usr/src/app
+#WORKDIR $DIRPATH
+ENV RUNPATH ./
+ADD app/run.sh $RUNPATH/run.sh
+RUN chmod +x run.sh
+#ADD ./entrypoint.sh $DIRPATH/
+
+#RUN chmod +x entrypoint.sh
+
+WORKDIR $RUNPATH
+
+# install package
+#RUN npm install -g sails
+#RUN npm install
+
+#ENTRYPOINT ["../entrypoint.sh"]
+#ENTRYPOINT ["../run.sh"]
+CMD ["bash","./run.sh"]
+#EXPOSE 1337

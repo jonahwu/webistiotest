@@ -1,0 +1,18 @@
+
+original structure:
+root@kubecontext:~/testCICD/cicdtestimage# tree
+.
+├── app
+│   ├── run.sh
+│   └── test
+│       ├── assert.sh
+│       ├── test.sh
+│       └── test.sh-bak
+├── docker
+│   ├── build.sh
+│   ├── build.sh-bak
+│   └── Dockerfile
+├── kubernetes
+│   ├── configmap.yaml
+│   ├── deploy.sh
+│   └── kubernetes.yaml.j2
